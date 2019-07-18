@@ -16,25 +16,29 @@
 
 本项目文件目录树如下：
 
-```
-\FILEAUDIT
-│  install.sh
-│  start.sh
-│  stop.sh
-│
-├─audit
-├─kernel
-│      fileauditzw.c
-│      LICENSE.txt
-│      Makefile
-│
-└─user
-       cryp-folder.c
-```
-
+├── fileaudit
+│   ├── audit
+│   ├── install.sh
+│   ├── kernel
+│   │   ├── fileauditzw.c
+│   │   ├── LICENSE.txt
+│   │   └── Makefile
+│   ├── start.sh
+│   ├── stop.sh
+│   └── user
+│       └── cryp-folder.c
+├── README-en.md
+└── README-zh.md
+``
 其中kernel文件夹为内核代码，user 文件夹为用户程序代码，install.sh、start.sh 和 stop.sh 三个 shell 脚本便于编译和启动程序。
 
-### 使用命令
+### 使用方法
+
+在开始使用之前，首先配置需要 audit 的文件夹，需要在 kernel/fileauditzw.c 中搜索宏定义 AUDIT_PATH 并修改为 AUDIT 文件夹的绝对路径
+
+```shell
+define AUDIT_PATH "your_audit_folder"
+```
 
 本项目是命令行界面。进入文件夹目录，依次执行以下命令
 
