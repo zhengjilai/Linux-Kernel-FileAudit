@@ -10,7 +10,7 @@
 
 ## 使用说明
 
-本项目开发及测试环境均为Ubuntu 16.04 LTS，内核版本为Linux 4.15.0-39-generic。在开发及测试环境中运行正常，但不保证在更高版本Linux内核中可以正常运行。
+本项目开发及测试环境均为 Ubuntu 16.04 LTS，内核版本为 Linux 4.15.0-39-generic。在开发及测试环境中运行正常，但不保证在更高版本 Linux 内核中可以正常运行。
 
 ### 文件介绍
 
@@ -18,7 +18,6 @@
 
 ```
 \FILEAUDIT
-│  FileAudit.md
 │  install.sh
 │  start.sh
 │  stop.sh
@@ -30,10 +29,10 @@
 │      Makefile
 │
 └─user
-        cryp-folder.c
+       cryp-folder.c
 ```
 
-其中kernel文件夹为内核代码，user文件夹为用户程序代码，install.sh、start.sh和stop.sh三个shell脚本便于编译和启动程序。
+其中kernel文件夹为内核代码，user 文件夹为用户程序代码，install.sh、start.sh 和 stop.sh 三个 shell 脚本便于编译和启动程序。
 
 ### 使用命令
 
@@ -51,7 +50,7 @@
 
 该命令装载编译好的内核模块到操作系统，并启动用户程序。此时出现用户程序的注册和登录提示，依提示注册登录后即进入用户程序，可执行各种命令进行操作。
 
-若执行完命令要退出程序，最好不要使用Ctrl+C的方式退出以免出现问题。用户程序提供了退出命令
+若执行完命令要退出程序，最好不要使用 Ctrl+C 的方式退出以免出现问题。用户程序提供了退出命令
 
 ```shell
 exit
@@ -65,7 +64,7 @@ exit
 
 此时内核模块即被卸载，系统恢复原样。
 
-若出现以上shell命令无法执行的情况，可尝试修改shell文件的执行权限
+若出现以上 shell 命令无法执行的情况，可尝试修改 shell 文件的执行权限
 
 ```shell
 chmod 775 install.sh start.sh stop.sh
