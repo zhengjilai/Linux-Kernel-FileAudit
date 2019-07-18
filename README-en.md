@@ -32,7 +32,10 @@ We provide three scripts for usage.
 
 0. WARN!!!
    Config the folder to audit before compile your kernel module, search the macro 'AUDIT\_PATH' in ./kernel/fileauditzw.c and change the value
-   # define AUDIT\_PATH "your\_audit\_folder"
+
+```shell
+# define AUDIT\_PATH "your\_audit\_folder"
+```
 
 1. install.sh helps you compile the C files. 
 2. start.sh utilizes insmod to insert the kernel module into linux kernel as a linux rootkit, and it also starts the file audit box shell.
