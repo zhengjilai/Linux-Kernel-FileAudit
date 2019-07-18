@@ -11,7 +11,7 @@ This project is a file audit based on linux system call overload. The basic func
 5. You can cp file into or out of AUDIT folder with our file audit box shell, then the shell will encrypt or decrypt files automatically.
 
 ## Project Structure
-
+```
 ├── fileaudit
 │   ├── audit
 │   ├── install.sh
@@ -25,25 +25,46 @@ This project is a file audit based on linux system call overload. The basic func
 │       └── cryp-folder.c
 ├── README-en.md
 └── README-zh.md
+```
 
 ## How to use it
 
-We provide three scripts for usage. 
 
 0. WARN!!!
+
    Config the folder to audit before compile your kernel module, search the macro 'AUDIT\_PATH' in ./kernel/fileauditzw.c and change the value
 
 ```shell
-# define AUDIT\_PATH "your\_audit\_folder"
+# define AUDIT_PATH "your_audit_folder"
 ```
 
+We provide three scripts for usage.
+
 1. install.sh helps you compile the C files. 
+
+```shell
+./install.sh
+```
+
 2. start.sh utilizes insmod to insert the kernel module into linux kernel as a linux rootkit, and it also starts the file audit box shell.
+
+```shell
+./start.sh
+```
+
+Use exit to escape the file audit box shell
+
+```shell
+exit
+```
+
 3. stop.sh utilizes rmmod to remove the rootkit from linux kernel.
+```shell
+./stop.sh
+```
+# Authors
 
-## Writers
-
-Writers are as follows:
+Authors are as follows:
 
 1. Jilai Zheng
 2. Lei Wang

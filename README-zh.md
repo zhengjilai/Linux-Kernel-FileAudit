@@ -37,7 +37,7 @@
 在开始使用之前，首先配置需要 audit 的文件夹，需要在 kernel/fileauditzw.c 中搜索宏定义 AUDIT_PATH 并修改为 AUDIT 文件夹的绝对路径
 
 ```shell
-define AUDIT_PATH "your_audit_folder"
+ # define AUDIT_PATH "your_audit_folder"
 ```
 
 本项目是命令行界面。进入文件夹目录，依次执行以下命令
