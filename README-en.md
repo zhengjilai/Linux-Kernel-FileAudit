@@ -32,7 +32,7 @@ This project is a file audit based on linux system call overload. The basic func
 
 0. WARN!!!
 
-   Config the folder to audit before compile your kernel module, search the macro 'AUDIT\_PATH' in ./kernel/fileauditzw.c and change the value
+Config the audit folder before compiling your kernel module, search the macro 'AUDIT\_PATH' in ./kernel/fileauditzw.c and change the value
 
 ```shell
 # define AUDIT_PATH "your_audit_folder"

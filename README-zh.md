@@ -15,7 +15,7 @@
 ### 文件介绍
 
 本项目文件目录树如下：
-
+```
 ├── fileaudit
 │   ├── audit
 │   ├── install.sh
@@ -29,7 +29,7 @@
 │       └── cryp-folder.c
 ├── README-en.md
 └── README-zh.md
-``
+```
 其中kernel文件夹为内核代码，user 文件夹为用户程序代码，install.sh、start.sh 和 stop.sh 三个 shell 脚本便于编译和启动程序。
 
 ### 使用方法
