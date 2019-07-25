@@ -29,6 +29,9 @@ This project is a file audit based on linux system call overload. The basic func
 
 ## How to use it
 
+Operating System: Ubuntu 16.04 LTS
+
+Linux Kernel: Linux 4.15.0-39-generic
 
 0. WARN!!!
 
