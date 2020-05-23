@@ -2,13 +2,13 @@
 
 ## Brief Description
 
-This project is a file audit based on linux system call overload. The basic functions are as follows:
+This project is a file audit based on linux system call override. :
 
-1. In our project, there is a special folder called AUDIT. If you start our project on computer, the following things will happen.
-2. Outside the AUDIT folder, nothing will be done respecting to our file audit.
-3. Inside the AUDIT folder, you cannot access(including link, rm, open, read, write, ls, etc.) any of the files, except that we use our provided file audit box shell in ./user.
-4. Besides, every file written in AUDIT folder with our file audit box shell will be encrypted by AES, so that other users cannot read plaintext without the decryption of our file audit box shell.
-5. You can cp file into or out of AUDIT folder with our file audit box shell, then the shell will encrypt or decrypt files automatically.
+In our project, there is a special folder called AUDIT. If you start our project on computer, the following things will happen.
+- Outside the AUDIT folder, nothing will be done respecting to our file audit.
+- Inside the AUDIT folder, you cannot access(including link, rm, open, read, write, ls, etc.) any of the files, except that we use our provided file audit box shell in ./user.
+- Every file written in AUDIT folder with our file audit box shell will be encrypted by AES, so that other users cannot read plaintext without the decryption of our file audit box shell.
+- You can cp file into or out of AUDIT folder with our file audit box shell, then the shell will encrypt or decrypt files automatically.
 
 ## Project Structure
 ```
