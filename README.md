@@ -27,47 +27,49 @@ In our project, there is a special folder called AUDIT. If you start our project
 └── README-zh.md
 ```
 
-## How to use it
+## Project Deployment
 
-Operating System: Ubuntu 16.04 LTS
+### Environment
 
-Linux Kernel: Linux 4.15.0-39-generic
+Our experiment environment is listed as follows:
 
-0. WARN!!!
+- Operating System: Ubuntu 16.04 LTS
+- Linux Kernel: Linux 4.15.0-39-generic
 
-Config the audit folder before compiling your kernel module, search the macro 'AUDIT\_PATH' in ./kernel/fileauditzw.c and change the value
+### Usage
+
+Config the audit folder before compiling your kernel module, 
+search the macro 'AUDIT\_PATH' in `./kernel/fileauditzw.c` and change its value to your wanted audit folder.
 
 ```shell
 # define AUDIT_PATH "your_audit_folder"
 ```
 
-We provide three scripts for usage.
+We provide three shell scripts for usage.
 
-1. install.sh helps you compile the C files. 
+- Shell script `install.sh` helps you compile the project. 
 
 ```shell
 ./install.sh
 ```
 
-2. start.sh utilizes insmod to insert the kernel module into linux kernel as a linux rootkit, and it also starts the file audit box shell.
+- Shell script `start.sh` utilizes insmod to insert the kernel module into linux kernel as a linux rootkit, and it also starts the file audit box shell.
 
 ```shell
+# Start the file audit box shell
 ./start.sh
-```
-
-Use exit to escape the file audit box shell
-
-```shell
+# Exit the file audit box shell
 exit
 ```
 
-3. stop.sh utilizes rmmod to remove the rootkit from linux kernel.
+- Shell script `stop.sh` utilizes rmmod to remove the rootkit from linux kernel.
 ```shell
 ./stop.sh
 ```
-# Authors
 
-Authors are as follows:
+# Contributers
 
-1. Jilai Zheng
-2. Lei Wang
+Contributers are as follows:
+
+- [Jilai Zheng](https://github.com/zhengjilai)
+- [Lei Wang](https://github.com/Dulou)
