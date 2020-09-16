@@ -2,12 +2,15 @@
 # compile kernel module
 if [ -d "kernel" ]; then
     echo "Begin to compile kernel module."
-    cd kernel && make clean || (echo "Make clean kernel module failed."; exit 1);
-    make || (echo "Make kernel module failed."; exit 1);
+    cd kernel && make clean 
+    if [ "$?" -ne 0 ]; then echo "Clean kernel module materials failed."; exit 1; fi
+    make
+    if [ "$?" -ne 0 ]; then echo "Compile kernel module failed."; exit 1; fi
 fi
 # compile user module
 if [ -d "../user" ]; then 
     echo "Begin to compile user file audit." && cd ..
-    gcc ./user/cryp-folder.c -o ./user/cry.o -lcrypto || (echo "Make user file audit failed."; exit 1); 
+    gcc ./user/cryp-folder.c -o ./user/cry.o -lcrypto
+    if [ "$?" -ne 0 ]; then echo "Compile user file audit failed."; exit 1; fi 
 fi
 
