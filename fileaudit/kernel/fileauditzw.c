@@ -41,11 +41,17 @@
 
 #define AES_BLOCK_SIZE (16)
 #define AES_IV_SIZE    (0)
-#define AES_KEY_SIZE   (16) /*because we using ECB mode*/
+#define AES_KEY_SIZE   (16) // because we using ECB mode
+#define EXPECTED_PNAME "cry.o" // user-side file audit process name
+#define MAX_LENGTH 256 
+#define KEY_FILE "/tmp/tmp-key-cryp-folder" /// key file position
+
+
+// The most important macro, defining the audit folder path
+// currently we only support absolute path
+// refer to README.md if you are still vague about this
 #define AUDIT_PATH "/home/jlzheng/audit"
-#define EXPECTED_PNAME "cry.o"
-#define MAX_LENGTH 256
-#define KEY_FILE "/tmp/tmp-key-cryp-folder"
+
 
 // write tag
 unsigned long cr0;
