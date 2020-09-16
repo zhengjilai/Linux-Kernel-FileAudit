@@ -42,7 +42,7 @@
 #define AES_BLOCK_SIZE (16)
 #define AES_IV_SIZE    (0)
 #define AES_KEY_SIZE   (16) /*because we using ECB mode*/
-#define AUDIT_PATH "/home/zhengjilai/fileaudit/audit"
+#define AUDIT_PATH "/home/jlzheng/audit"
 #define EXPECTED_PNAME "cry.o"
 #define MAX_LENGTH 256
 #define KEY_FILE "/tmp/tmp-key-cryp-folder"
@@ -90,11 +90,11 @@ get_syscall_table_bf(void)
 	unsigned long *syscall_table;
 	unsigned long int i;
         // search sys_close to get sys_call_table
-	for (i = (unsigned long int)sys_close; i < ULONG_MAX;
+	for (i = (unsigned long int)ksys_close; i < ULONG_MAX;
 			i += sizeof(void *)) {
 		syscall_table = (unsigned long *)i;
 
-		if (syscall_table[__NR_close] == (unsigned long)sys_close)
+		if (syscall_table[__NR_close] == (unsigned long)ksys_close)
 			return syscall_table;
 	}
 	return NULL;
@@ -204,7 +204,7 @@ hacked_read (int __fd, void *__buf, size_t __nbytes)
 	        memset(key, 0, 16);
 	        fd = orig_open(KEY_FILE, O_RDONLY, 0664);
 	        orig_read(fd, key, 16);
-	        sys_close(fd);
+	        ksys_close(fd);
                 set_fs(fs);
 
                 // kmalloc kernel space for iv, src and enc of AES
@@ -277,7 +277,7 @@ hacked_write (int __fd, const void *__buf, size_t __n)
                 memset(key, 0, 16);
                 fd = orig_open(KEY_FILE, O_RDONLY, 0664);
                 orig_read(fd, key, 16);
-                sys_close(fd);
+                ksys_close(fd);
                 set_fs(fs);
 
                 // kmalloc kernel space for iv, src and enc of AES

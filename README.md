@@ -59,14 +59,14 @@ and it also starts a file audit box shell.
 
 ```shell
 # Start the file audit box shell
-./start.sh
+sudo ./start.sh
 # Exit the file audit box shell
 exit
 ```
 
 - Shell script `stop.sh` utilizes rmmod to remove the rootkit from linux kernel.
 ```shell
-./stop.sh
+sudo ./stop.sh
 ```
 
 ## Contributers

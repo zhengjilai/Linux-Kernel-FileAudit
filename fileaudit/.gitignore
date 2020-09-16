@@ -1,2 +1,9 @@
-*.o
-*.ko
+user/*.o
+kernel/*.ko
+kernel/*.mod.c
+kernel/*.mod.o
+kernel/*.o
+kernel/*.cmd
+kernel/.tmp_versions
+modules.order
+Module.symvers
