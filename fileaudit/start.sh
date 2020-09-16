@@ -1,4 +1,9 @@
-cd kernel
-sudo insmod fileauditzw.ko
-cd ../user
-./cry.o
+#!/bin/bash
+# insmod
+if [ -d "kernel" ]; then
+   insmod kernel/fileauditzw.ko
+fi
+# start user file audit
+if [ -d "user" ]; then
+   ./user/cry.o
+fi
