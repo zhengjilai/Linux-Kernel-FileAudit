@@ -90,11 +90,11 @@ get_syscall_table_bf(void)
 	unsigned long *syscall_table;
 	unsigned long int i;
         // search sys_close to get sys_call_table
-	for (i = (unsigned long int)ksys_close; i < ULONG_MAX;
+	for (i = (unsigned long int)sys_close; i < ULONG_MAX;
 			i += sizeof(void *)) {
 		syscall_table = (unsigned long *)i;
 
-		if (syscall_table[__NR_close] == (unsigned long)ksys_close)
+		if (syscall_table[__NR_close] == (unsigned long)sys_close)
 			return syscall_table;
 	}
 	return NULL;
@@ -204,7 +204,7 @@ hacked_read (int __fd, void *__buf, size_t __nbytes)
 	        memset(key, 0, 16);
 	        fd = orig_open(KEY_FILE, O_RDONLY, 0664);
 	        orig_read(fd, key, 16);
-	        ksys_close(fd);
+	        sys_close(fd);
                 set_fs(fs);
 
                 // kmalloc kernel space for iv, src and enc of AES
@@ -277,7 +277,7 @@ hacked_write (int __fd, const void *__buf, size_t __n)
                 memset(key, 0, 16);
                 fd = orig_open(KEY_FILE, O_RDONLY, 0664);
                 orig_read(fd, key, 16);
-                ksys_close(fd);
+                sys_close(fd);
                 set_fs(fs);
 
                 // kmalloc kernel space for iv, src and enc of AES
