@@ -37,6 +37,9 @@ Our experiment environment is listed as follows:
 - Operating System: Ubuntu 16.04 LTS
 - Linux Kernel: Linux 4.15.0-39-generic
 
+Note that the kernel version is very important and sensitive. 
+We have found that complilation can not be conducted properly with Linux kernel 5.0.0-37-generic.  
+
 ### Usage
 
 Config the audit folder before compiling your kernel module, 
@@ -69,9 +72,9 @@ exit
 sudo ./stop.sh
 ```
 
-## Contributers
+## Contributors
 
-Contributers are as follows:
+Contributors are as follows:
 
 - [Jilai Zheng](https://github.com/zhengjilai)
 - [Lei Wang](https://github.com/Dulou)
